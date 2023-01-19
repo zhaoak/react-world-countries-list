@@ -7,13 +7,17 @@ import CountryCard from '../CountryCard/CountryCard';
 import useCountries from '../../hooks/useCountries.js';
 
 export default function Main() {
-  const [continent, setContinent] = useState('');
-  const countries = useCountries();
+  const [continent, setContinent] = useState(null);
+  const allCountries = useCountries();
+  console.log(allCountries);
+  function filterByContinent(countryList, continentFilter) {
+    return countryList.filter((country) => country.continent === continentFilter);
+  }
 
   return (
     <main>
       <Interface continent={continent} setContinent={setContinent} />
-      {countries.map((country) => (
+      {filterByContinent(allCountries, continent).map((country) => (
         <CountryCard key={country.id} name={country.name} iso2={country.iso2} />
       ))}
       ;
