@@ -1,0 +1,9 @@
+.country-card-container {
+  border: thick double black;
+  width: 12rem;
+  height: 12rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
