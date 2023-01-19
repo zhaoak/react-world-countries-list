@@ -7,9 +7,9 @@ import CountryCard from '../CountryCard/CountryCard';
 import useCountries from '../../hooks/useCountries.js';
 
 export default function Main() {
-  const [continent, setContinent] = useState(null);
+  const [continent, setContinent] = useState('Oceania');
   const allCountries = useCountries();
-  console.log(allCountries);
+
   function filterByContinent(countryList, continentFilter) {
     return countryList.filter((country) => country.continent === continentFilter);
   }
