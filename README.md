@@ -48,6 +48,21 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
     1) Notice especially if two siblings need the same state: if so, you need a callback (i.e., debit card).
 1) Pick one feature from your list and build it out. Start with its parentmost component, and work down the component chain. Do not build another feature until this one is finished (and you can prove that it is finished by validating state change).
 
+### here is the actual plan
+- root element
+    - header
+    - main
+        - `Interface` component (search and sort)
+            - `Search` component (stretch goal)
+            - `ContinentSelector` component
+        - map matching countries to many `CountryCard` components
+
+### state
+- must store: 
+    - selected country category
+    - search value (if stretch goal done)
+Component will then dynamically rerender when this state changes.
+
 ## Additional considerations
 - Is any of your state redundant? For example, if you're tracking `wins`, `losses`, and `total`, you can probably get rid of `losses` state, and calculate it as `total - wins`.
 - Where should each piece of state live? How are you going to get data from where it lives to where it needs to be?
