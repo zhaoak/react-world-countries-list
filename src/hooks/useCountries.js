@@ -19,5 +19,5 @@ export default function useCountries() {
     fetchData();
   }, []);
   // return state
-  return countries;
+  return { countries, error };
 }
